@@ -1,0 +1,28 @@
+### Register user
+POST http://localhost:3000/auth/register
+Content-Type: application/json
+
+{
+  "email": "rylcior1@gmail.com",
+  "password": "test",
+  "confirmPassword": "test"
+}
+
+### Login
+POST http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+  "email": "rylcior1@gmail.com",
+  "password": "test"
+}
+
+### Refresh
+POST http://localhost:3000/auth/refresh
+Content-Type: application/json
+
+### Logout
+GET http://localhost:3000/auth/logout
+
+### Delete
+DELETE http://localhost:3000/auth/delete
