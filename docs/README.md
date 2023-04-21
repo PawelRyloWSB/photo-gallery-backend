@@ -1,6 +1,5 @@
 ## Projekt będzie składał się z dwóch części: backendu (czyli serwera) oraz frontendu (czyli strony internetowej, która będzie wyświetlana użytkownikowi):
-* Backend (serwer) będzie napisany w języku Node.js z użyciem frameworka Nest.js, a do przechowywania zdjęć oraz informacji o użytkownikach będzie wykorzystana baza danych PostgreSQL. Serwer będzie odpowiadał za przechowywanie zdjęć i informacji o użytkownikach oraz udostępnianie interfejsu programistycznego (API), 
-dzięki któremu użytkownik będzie mógł dodawać zdjęcia oraz tworzyć i logować się na swoje konto.
+* Backend (serwer) zostanie napisany w języku Node.js z użyciem frameworka Nest.js. Serwer będzie odpowiadał za przechowywanie zdjęć i informacji o użytkownikach oraz udostępnianianiu interfejsu programistycznego (API), dzięki któremu użytkownik będzie mógł dodawać zdjęcia oraz tworzyć i logować się na swoje konto.
 
 * Frontend (strona internetowa) zostanie napisany w języku JavaScript z użyciem biblioteki React.js. Strona ta będzie umożliwiała użytkownikowi przeglądanie zdjęć.
 
