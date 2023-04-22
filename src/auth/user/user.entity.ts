@@ -1,5 +1,12 @@
-import { BaseEntity, Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import {
+  BaseEntity,
+  Column,
+  Entity,
+  OneToMany,
+  PrimaryGeneratedColumn,
+} from 'typeorm';
 import { Exclude } from 'class-transformer';
+import { Photos } from '../../photos/photos.entity';
 
 @Entity()
 export class User extends BaseEntity {
@@ -16,4 +23,7 @@ export class User extends BaseEntity {
   @Exclude()
   @Column({ type: 'varchar', nullable: true })
   refreshToken: string;
+
+  @OneToMany(() => Photos, (photo) => photo.user)
+  photos: Photos[];
 }

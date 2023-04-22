@@ -40,20 +40,6 @@ export class AuthController {
     return user;
   }
 
-  @Post('login')
-  @HttpCode(HttpStatus.OK)
-  async login(
-    @Body() { email, password }: LoginUserDto,
-    @Res({ passthrough: true }) res,
-  ) {
-    const user = await this.authService.login({ email, password });
-    await this.authService.setAuthToken(res, {
-      user_id: user.id,
-    });
-
-    return user;
-  }
-
   @Post('refresh')
   @UseGuards(RefreshAuthGuard)
   @HttpCode(HttpStatus.OK)
@@ -72,10 +58,23 @@ export class AuthController {
     });
   }
 
+  @Post('login')
+  @HttpCode(HttpStatus.OK)
+  async login(
+    @Body() { email, password }: LoginUserDto,
+    @Res({ passthrough: true }) res,
+  ) {
+    const user = await this.authService.login({ email, password });
+    await this.authService.setAuthToken(res, {
+      user_id: user.id,
+    });
+
+    return user;
+  }
+
   @Get('logout')
   @UseGuards(JwtAuthGuard)
   async logout(@Req() req, @Res({ passthrough: true }) res) {
-    console.log('req', req);
     await this.authService.clearAuthTokens(res, req.user.id);
     return {
       message: 'Logged out',

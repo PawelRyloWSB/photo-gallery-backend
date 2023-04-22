@@ -41,7 +41,6 @@ export class AuthService {
   }
 
   async validateUser(userId): Promise<User> {
-    console.log('userId', userId);
     return this.userService.findOneBy({ id: userId });
   }
 
